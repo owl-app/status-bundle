@@ -16,7 +16,6 @@ namespace Owl\Bundle\StatusBundle\DependencyInjection;
 use Sylius\Bundle\ResourceBundle\DependencyInjection\Extension\AbstractResourceExtension;
 use Owl\Bundle\StatusBundle\EventListener\ReviewChangeListener;
 use Owl\Bundle\StatusBundle\EventListener\UpdateSubjectStatusListener;
-use Owl\Bundle\StatusBundle\Updater\AverageRatingUpdater;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
