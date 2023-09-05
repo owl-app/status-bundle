@@ -37,6 +37,11 @@ abstract class StatusType extends AbstractResourceType
         ]);
     }
 
+    /**
+     * @return int[]
+     *
+     * @psalm-return array<int<1, max>, int<1, max>>
+     */
     private function createRatingList(int $maxRate): array
     {
         $ratings = [];

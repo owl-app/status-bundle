@@ -18,7 +18,7 @@ final class UpdateSubjectStatusListener
         $this->statusSubjectManager = $statusSubjectManager;
     }
 
-    public function postPersist(LifecycleEventArgs $args)
+    public function postPersist(LifecycleEventArgs $args): void
     {
         $this->saveStatus($args);
     }

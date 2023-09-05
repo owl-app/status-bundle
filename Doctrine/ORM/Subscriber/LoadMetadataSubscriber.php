@@ -28,6 +28,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         $this->subjects = $subjects;
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return list{'loadClassMetadata'}
+     */
     public function getSubscribedEvents(): array
     {
         return [
@@ -60,6 +65,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         }
     }
 
+    /**
+     * @return ((false|string)[][]|string)[]
+     *
+     * @psalm-return array{fieldName: 'statusSubject', targetEntity: string, inversedBy: 'statuses', joinColumns: list{array{name: string, referencedColumnName: string, nullable: false, onDelete: 'CASCADE'}}}
+     */
     private function createSubjectMapping(
         string $statusableEntity,
         string $subject,
@@ -78,6 +88,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         ];
     }
 
+    /**
+     * @return (((false|string)[]|string)[]|string)[]
+     *
+     * @psalm-return array{fieldName: 'owner', targetEntity: string, joinColumns: list{array{name: 'owner_id', referencedColumnName: string, nullable: false, onDelete: 'CASCADE'}}, cascade: list{'persist'}}
+     */
     private function createReviewerMapping(string $ownerEntity, ClassMetadata $ownerEntityMetadata): array
     {
         return [
@@ -93,6 +108,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         ];
     }
 
+    /**
+     * @return (string|string[])[]
+     *
+     * @psalm-return array{fieldName: 'statuses', targetEntity: string, mappedBy: 'statusSubject', cascade: list{'all'}}
+     */
     private function createReviewsMapping(string $statusEntity): array
     {
         return [

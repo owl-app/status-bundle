@@ -36,6 +36,11 @@ final class OwlStatusExtension extends AbstractResourceExtension
         $loader->load(sprintf('integrations/%s.xml', $config['driver']));
     }
 
+    /**
+     * @return array[]
+     *
+     * @psalm-return array<string, array>
+     */
     private function resolveResources(array $resources, ContainerBuilder $container): array
     {
         $container->setParameter('owl.status.subjects', $resources);
