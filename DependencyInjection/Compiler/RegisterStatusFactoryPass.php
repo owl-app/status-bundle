@@ -13,13 +13,14 @@ final class RegisterStatusFactoryPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
+        /** @var string $subject */
         foreach ($container->getParameter('owl.status.subjects') as $subject => $configuration) {
             $factory = $container->findDefinition('owl.factory.' . $subject . '_status');
 
             $statusFactoryDefinition = new Definition(StatusFactory::class, [$factory]);
             $statusFactoryDefinition->setPublic(true);
 
-            $container->setDefinition(sprintf('owl.factory.' . $subject . '_status'), $statusFactoryDefinition);
+            $container->setDefinition('owl.factory.' . $subject . '_status', $statusFactoryDefinition);
         }
     }
 }
