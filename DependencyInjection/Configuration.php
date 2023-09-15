@@ -13,10 +13,9 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\StatusBundle\DependencyInjection;
 
-use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Owl\Bridge\SyliusResource\Controller\BaseController;
 use Owl\Bundle\FileBundle\Form\Type\FileType;
-use Owl\Component\File\Model\FileInterface;
+use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Component\Resource\Factory\Factory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

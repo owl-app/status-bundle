@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\StatusBundle\EventListener;
 
-use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
-use Owl\Component\Status\Model\StatusInterface;
+use Doctrine\Persistence\ObjectManager;
 use Owl\Component\Status\Model\StatusableInterface;
+use Owl\Component\Status\Model\StatusInterface;
 
 final class UpdateSubjectStatusListener
 {
